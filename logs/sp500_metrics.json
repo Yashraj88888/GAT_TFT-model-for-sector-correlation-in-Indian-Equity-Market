@@ -1,0 +1,10 @@
+{
+  "best_val_loss": 0.011722974827794056,
+  "total_epochs": 16,
+  "num_parameters": 72514,
+  "trainable_parameters": 72514,
+  "dataset": "SP500",
+  "feature_dim": 23,
+  "seq_length": 15,
+  "num_stocks": 1
+}

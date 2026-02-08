@@ -1,0 +1,10 @@
+{
+  "best_val_loss": 0.12328235059976578,
+  "total_epochs": 40,
+  "num_parameters": 123202,
+  "trainable_parameters": 123202,
+  "dataset": "India",
+  "feature_dim": 34,
+  "seq_length": 15,
+  "num_stocks": 1
+}

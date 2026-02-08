@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+
+# Data files
+data/processed/
+data/raw/
+*.pkl
+*.pt
+*.ckpt
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+

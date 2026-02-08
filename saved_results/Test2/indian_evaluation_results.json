@@ -1,0 +1,23 @@
+{
+  "return_mae": 0.0238179974257946,
+  "return_rmse": 0.027554825573146157,
+  "return_correlation": 0.12037573182753662,
+  "movement_accuracy": 0.46875,
+  "movement_precision": 0.46875,
+  "movement_recall": 1.0,
+  "movement_f1": 0.6382978723404256,
+  "movement_pred_positive_ratio": 1.0,
+  "movement_true_positive_ratio": 0.46875,
+  "optimal_threshold_used": 0.4755102040816327,
+  "num_test_samples": 64,
+  "confusion_matrix": [
+    [
+      0,
+      34
+    ],
+    [
+      0,
+      30
+    ]
+  ]
+}

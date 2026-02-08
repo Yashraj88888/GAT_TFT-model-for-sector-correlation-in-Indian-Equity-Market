@@ -1,0 +1,204 @@
+2026-02-04 09:59:36,046 - INFO - 
+================================================================================
+2026-02-04 09:59:36,046 - INFO - IMPROVED DATA PREPROCESSING
+2026-02-04 09:59:36,046 - INFO - ================================================================================
+2026-02-04 09:59:36,046 - INFO - Started at: 2026-02-04 09:59:36
+2026-02-04 09:59:36,046 - INFO - 
+Loading data from data/raw/indian_raw.pkl...
+2026-02-04 09:59:36,057 - INFO - ✓ Loaded 129 stocks
+2026-02-04 09:59:36,057 - INFO - 
+Processing INDIAN dataset...
+2026-02-04 09:59:36,086 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,106 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,125 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,145 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,164 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,183 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,202 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,221 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,240 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,259 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,278 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,297 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,316 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,335 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,354 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,373 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,392 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,411 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,429 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,448 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,473 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,545 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,567 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,588 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,610 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,632 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,653 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,676 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,698 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,716 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,736 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,755 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,774 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,793 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,812 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,871 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,892 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,911 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,929 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,948 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,967 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:36,985 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,004 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,023 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,042 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,061 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,080 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,099 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,118 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,137 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,156 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,175 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,194 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,212 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,231 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,250 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,269 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,289 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,308 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,328 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,347 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,366 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,385 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,404 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,423 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,442 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,461 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,480 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,499 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,518 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,537 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,557 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,575 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,595 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,613 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,632 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,651 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,670 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,689 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,709 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,728 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,747 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,766 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,785 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,803 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,822 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,841 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,860 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,880 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,899 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,918 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,937 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,957 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,976 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:37,995 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,014 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,033 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,051 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,070 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,090 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,109 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,128 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,147 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,166 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,185 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,203 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,223 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,242 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,261 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,281 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,300 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,319 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,338 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,357 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,376 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,395 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,414 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,433 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,452 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,470 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,490 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,509 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,528 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,547 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,566 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,585 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,603 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,622 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,642 - ERROR - Error in feature extraction: NDFrame.fillna() got an unexpected keyword argument 'method'
+2026-02-04 09:59:38,642 - INFO - 
+✓ Feature Extraction Statistics:
+2026-02-04 09:59:38,642 - INFO -   ✓ Successful: 0
+2026-02-04 09:59:38,642 - INFO -   ✗ Too short: 0
+2026-02-04 09:59:38,642 - INFO -   ✗ Feature extraction failed: 129
+2026-02-04 09:59:38,642 - INFO -   ✗ Insufficient features: 0
+2026-02-04 09:59:38,642 - ERROR - ✗ No valid stocks after preprocessing
+2026-02-04 10:01:33,969 - INFO - 
+================================================================================
+2026-02-04 10:01:33,969 - INFO - IMPROVED DATA PREPROCESSING
+2026-02-04 10:01:33,969 - INFO - ================================================================================
+2026-02-04 10:01:33,970 - INFO - Started at: 2026-02-04 10:01:33
+2026-02-04 10:01:33,970 - INFO - 
+Loading data from data/raw/indian_raw.pkl...
+2026-02-04 10:01:33,980 - INFO - ✓ Loaded 129 stocks
+2026-02-04 10:01:33,980 - INFO - 
+Processing INDIAN dataset...
+2026-02-04 10:01:34,410 - INFO -   Processed 20/129 stocks...
+2026-02-04 10:01:34,871 - INFO -   Processed 40/129 stocks...
+2026-02-04 10:01:35,290 - INFO -   Processed 60/129 stocks...
+2026-02-04 10:01:35,707 - INFO -   Processed 80/129 stocks...
+2026-02-04 10:01:36,124 - INFO -   Processed 100/129 stocks...
+2026-02-04 10:01:36,613 - INFO -   Processed 120/129 stocks...
+2026-02-04 10:01:36,802 - INFO - 
+✓ Feature Extraction Statistics:
+2026-02-04 10:01:36,802 - INFO -   ✓ Successful: 129
+2026-02-04 10:01:36,802 - INFO -   ✗ Too short: 0
+2026-02-04 10:01:36,802 - INFO -   ✗ Feature extraction failed: 0
+2026-02-04 10:01:36,802 - INFO -   ✗ Insufficient features: 0
+2026-02-04 10:01:36,802 - INFO - ✓ Cleaned data: 129 stocks
+2026-02-04 10:01:36,828 - INFO - ✓ Created time splits for 129 stocks
+2026-02-04 10:01:38,319 - INFO - ✓ Normalized 129 stocks
+2026-02-04 10:01:38,534 - INFO - 
+✓ Saved: data/processed/indian_normalized.pkl
+2026-02-04 10:01:38,534 - INFO - ✓ Features per stock: 52
+2026-02-04 10:01:38,534 - INFO - 
+✓ Ready to run windowing!
+2026-02-08 23:50:32,721 - INFO - 
+================================================================================
+2026-02-08 23:50:32,722 - INFO - IMPROVED DATA PREPROCESSING
+2026-02-08 23:50:32,722 - INFO - ================================================================================
+2026-02-08 23:50:32,722 - INFO - Started at: 2026-02-08 23:50:32
+2026-02-08 23:50:32,722 - INFO - 
+Loading data from data/raw/indian_raw.pkl...
+2026-02-08 23:50:32,784 - INFO - ✓ Loaded 97 stocks
+2026-02-08 23:50:32,784 - INFO - 
+Processing INDIAN dataset...
+2026-02-08 23:50:33,401 - INFO -   Processed 20/97 stocks...
+2026-02-08 23:50:34,139 - INFO -   Processed 40/97 stocks...
+2026-02-08 23:50:34,751 - INFO -   Processed 60/97 stocks...
+2026-02-08 23:50:35,361 - INFO -   Processed 80/97 stocks...
+2026-02-08 23:50:35,902 - INFO - 
+✓ Feature Extraction Statistics:
+2026-02-08 23:50:35,902 - INFO -   ✓ Successful: 97
+2026-02-08 23:50:35,902 - INFO -   ✗ Too short: 0
+2026-02-08 23:50:35,902 - INFO -   ✗ Feature extraction failed: 0
+2026-02-08 23:50:35,902 - INFO -   ✗ Insufficient features: 0
+2026-02-08 23:50:35,902 - INFO - ✓ Cleaned data: 97 stocks
+2026-02-08 23:50:35,944 - INFO - ✓ Created time splits for 97 stocks
+2026-02-08 23:50:37,532 - INFO - ✓ Normalized 97 stocks
+2026-02-08 23:50:37,831 - INFO - 
+✓ Saved: data/processed/indian_normalized.pkl
+2026-02-08 23:50:37,831 - INFO - ✓ Features per stock: 52
+2026-02-08 23:50:37,831 - INFO - 
+✓ Ready to run windowing!

@@ -1,0 +1,17 @@
+mae : Mean Absolute Error : how well does the model predict the returns
+rmse : Root Mean Square Error : Penalizes large errors more heavily than MAE
+        - RMSE ≈ MAE → errors are uniform
+        - RMSE ≫ MAE → occasional big failures
+accuracy : (TP + TN)/Total : Accuracy is misleading in imbalanced or biased prediction setups (which you have).
+movement_precision : TP/(TP + FP) : when model predicts UP, how often is it actually UP?
+recall : TP/(TP + FN) : ability to measure positive instances : like out of all UPs, how many did the model predict as UP.
+f1_score : harmonic mean of precision and recall : range[0,1] : higher the better
+movement prediciton confidence : avg predicted probability : higher the better
+optimal threshold : This is extremely important.
+                    Default threshold = 0.5
+                    Your optimal threshold = 0.1
+                     - Meaning:
+                    The model only needs 10% confidence to predict UP
+                     - This confirms:
+                    The model is weakly informative, so the optimizer lowered the threshold to maximize recall/F1.
+                    

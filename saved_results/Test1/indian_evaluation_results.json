@@ -1,0 +1,11 @@
+{
+  "return_mae": 0.012457648292183876,
+  "return_rmse": 0.01711850054562092,
+  "movement_accuracy": 0.4720732276119403,
+  "movement_precision": 0.4720732276119403,
+  "movement_recall": 1.0,
+  "movement_f1": 0.6413719355221988,
+  "movement_pred_confidence": 0.49951884150505066,
+  "optimal_threshold_used": 0.1,
+  "num_test_samples": 17152
+}

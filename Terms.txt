@@ -1,0 +1,24 @@
+1. Simple Moving Average: technical indicator that calculates the average price of an asset over a specific number of periods, equally weighting each price.
+    Formula: Sum of closing prices over n periods / n;
+    > An upward-sloping SMA indicates a bullish trend, while a downward-sloping one suggests a bearish trend.
+
+2. Exponential Moving Average: Technical indicator that emphasizes more on current prices (recent datapoints). It is better at responding to price fluctuations swiftly.
+    Formula : -> multiplier = 2/ (TimePeriod + 1)
+        -> EMA = (Current Price - Prev EMA) * multiplier + Prev EMA
+
+3. RSI[Relative Strength Index]: It is a momentum oscillator that is used to measure speed and magnitude of stock's price changes to detect overbrought or oversold situations.
+    > It is displayed on a scale of 0 to 100
+
+4 MACD[Moving Average Convergence Divergence]: 
+    > Helps investors to identify price trends, measure trend momentum and indentify entry point for buy or sell.
+    It shows relatiosnhip between two moving averages of stock.
+    Formula : Subtract 26-period EMA from 12-period EMA
+    > A nine-day EMA of the MACD line is called the signal line, plotted on top of the MACD line, which can function as a trigger for buy or sell signals.
+
+5. Bollinger Bands : Shows price volatility with 3 lines.middle line (20-period Simple Moving Average) and upper/lower bands (usually 2 standard deviations away) that widen in high volatility and narrow in low volatility, helping traders spot relative highs/lows, overbought/oversold conditions, and potential trend reversals or continuations
+
+6. Average True Range: measures market volatility by averaging the range of price movement (including gaps) over a specified period, typically 14 days. It does not indicate price direction, but shows the degree of volatility. 
+    Calculation: ATR is a moving average of the True Range (TR). The True Range is the maximum of:
+    Current High minus Current Low.
+    Absolute value of Current High minus Previous Close.
+    Absolute value of Current Low minus Previous Close.
