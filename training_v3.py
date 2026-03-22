@@ -169,14 +169,104 @@ class DiceLoss(nn.Module):
         return 1 - dice
 
 
+class ListNetRankingLoss(nn.Module):
+    """
+    ListNet-style ranking loss for learning to rank stocks.
+    Compares predicted score distributions to actual return distributions.
+    
+    The idea: if the model predicts stock A > B > C, the actual returns should follow
+    the same order. Uses softmax cross-entropy over the list.
+    """
+    def __init__(self, temperature: float = 1.0):
+        super().__init__()
+        self.temperature = temperature
+    
+    def forward(self, predicted_scores: torch.Tensor, actual_returns: torch.Tensor) -> torch.Tensor:
+        """
+        Args:
+            predicted_scores: Model's return predictions (batch,)
+            actual_returns: Actual returns (batch,)
+        """
+        # Convert to probabilities using softmax
+        pred_probs = F.softmax(predicted_scores / self.temperature, dim=0)
+        target_probs = F.softmax(actual_returns / self.temperature, dim=0)
+        
+        # Cross-entropy between predicted and actual distributions
+        loss = -torch.sum(target_probs * torch.log(pred_probs + 1e-10))
+        
+        return loss
+
+
+class PairwiseRankingLoss(nn.Module):
+    """
+    Pairwise ranking loss (margin ranking) for stock ranking.
+    For each pair of stocks, if stock A has higher return than B,
+    the model should predict higher score for A.
+    """
+    def __init__(self, margin: float = 0.1, sample_pairs: int = 100):
+        super().__init__()
+        self.margin = margin
+        self.sample_pairs = sample_pairs
+        self.ranking_loss = nn.MarginRankingLoss(margin=margin)
+    
+    def forward(self, predicted_scores: torch.Tensor, actual_returns: torch.Tensor) -> torch.Tensor:
+        """
+        Args:
+            predicted_scores: Model's return predictions (batch,)
+            actual_returns: Actual returns (batch,)
+        """
+        batch_size = predicted_scores.size(0)
+        if batch_size < 2:
+            return torch.tensor(0.0, device=predicted_scores.device)
+        
+        # Sample pairs instead of all O(n^2) pairs
+        n_pairs = min(self.sample_pairs, batch_size * (batch_size - 1) // 2)
+        
+        total_loss = 0.0
+        valid_pairs = 0
+        
+        for _ in range(n_pairs):
+            i, j = torch.randint(0, batch_size, (2,))
+            if i == j:
+                continue
+            
+            # Determine which stock has higher return
+            if actual_returns[i] > actual_returns[j]:
+                target = torch.tensor(1.0, device=predicted_scores.device)
+                loss = self.ranking_loss(
+                    predicted_scores[i].unsqueeze(0),
+                    predicted_scores[j].unsqueeze(0),
+                    target.unsqueeze(0)
+                )
+            elif actual_returns[j] > actual_returns[i]:
+                target = torch.tensor(1.0, device=predicted_scores.device)
+                loss = self.ranking_loss(
+                    predicted_scores[j].unsqueeze(0),
+                    predicted_scores[i].unsqueeze(0),
+                    target.unsqueeze(0)
+                )
+            else:
+                continue
+            
+            total_loss += loss
+            valid_pairs += 1
+        
+        if valid_pairs == 0:
+            return torch.tensor(0.0, device=predicted_scores.device)
+        
+        return total_loss / valid_pairs
+
+
 class CombinedLossV3(nn.Module):
     """
     Improved combined loss with multiple components
     Includes prediction diversity to prevent all-same predictions
+    AND ranking losses for top-K stock selection
     """
     def __init__(self, 
                  return_weight: float = 0.3,
-                 movement_weight: float = 0.7,
+                 movement_weight: float = 0.5,
+                 ranking_weight: float = 0.2,  # NEW: ranking loss weight
                  pos_weight: float = 1.5,
                  label_smoothing: float = 0.05,
                  use_dice: bool = True,
@@ -187,6 +277,7 @@ class CombinedLossV3(nn.Module):
         
         self.return_weight = return_weight
         self.movement_weight = movement_weight
+        self.ranking_weight = ranking_weight
         self.label_smoothing = label_smoothing
         self.use_dice = use_dice
         self.dice_weight = dice_weight
@@ -207,6 +298,10 @@ class CombinedLossV3(nn.Module):
         
         # Diversity loss - prevents all-same predictions
         self.diversity_loss = PredictionDiversityLoss(target_pos_ratio=0.5, strength=1.0)
+        
+        # Ranking losses - for top-K stock selection
+        self.listnet_loss = ListNetRankingLoss(temperature=1.0)
+        self.pairwise_loss = PairwiseRankingLoss(margin=0.05, sample_pairs=50)
         
         # Dice loss
         if use_dice:
@@ -248,16 +343,30 @@ class CombinedLossV3(nn.Module):
         diversity = self.diversity_loss(movement_logits)
         diversity_val = diversity.item()
         
+        # Ranking losses - for top-K stock selection
+        ranking_loss_val = 0.0
+        if self.ranking_weight > 0 and len(return_pred) > 1:
+            # ListNet loss (distribution matching)
+            listnet = self.listnet_loss(return_pred, return_target)
+            # Pairwise ranking loss (margin-based)
+            pairwise = self.pairwise_loss(return_pred, return_target)
+            ranking_loss = 0.5 * listnet + 0.5 * pairwise
+            ranking_loss_val = ranking_loss.item()
+        else:
+            ranking_loss = torch.tensor(0.0, device=return_pred.device)
+        
         total_loss = (self.return_weight * return_loss + 
                      self.movement_weight * movement_loss +
-                     self.diversity_weight * diversity)
+                     self.diversity_weight * diversity +
+                     self.ranking_weight * ranking_loss)
         
         return total_loss, {
             'total': total_loss.item(),
             'return': return_loss.item(),
             'movement': movement_loss.item(),
             'dice': dice_loss_val,
-            'diversity': diversity_val
+            'diversity': diversity_val,
+            'ranking': ranking_loss_val
         }
 
 
@@ -275,9 +384,22 @@ class SectorAwareDataLoader:
         self.targets_return = windowed_data[split]['targets_return'].astype(np.float32)
         self.targets_movement = windowed_data[split]['targets_movement'].astype(np.float32)
         
-        # Generate random sector IDs for each sample (simplified)
-        # In real scenario, this would come from the data
-        self.sector_ids = np.random.randint(0, NUM_SECTORS, len(self.windows))
+        # Load symbol_ids if available (for cross-sectional evaluation)
+        if 'symbol_ids' in windowed_data[split]:
+            self.symbol_ids = windowed_data[split]['symbol_ids']
+        else:
+            self.symbol_ids = np.zeros(len(self.windows), dtype=np.int64)
+        
+        # Load dates if available (for cross-sectional evaluation)
+        if 'dates' in windowed_data[split]:
+            self.dates = windowed_data[split]['dates']
+        else:
+            self.dates = None
+        
+        # Generate sector IDs from symbol_ids 
+        # In real scenario, we'd have a symbol->sector mapping
+        # For now, use symbol_id mod NUM_SECTORS as a proxy
+        self.sector_ids = self.symbol_ids % NUM_SECTORS
         
         self.batch_size = batch_size
         self.shuffle = shuffle

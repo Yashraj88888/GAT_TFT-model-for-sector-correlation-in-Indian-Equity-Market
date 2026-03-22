@@ -1,0 +1,112 @@
+{
+  "dataset": "India",
+  "timestamp": "2026-02-09T16:40:28.824976",
+  "n_test_days": 350,
+  "n_stocks": 97,
+  "ranking_metrics": {
+    "5": {
+      "precision": 0.48400000000000004,
+      "precision_overlap": 0.03485714285714286,
+      "recall": 0.03485714285714286,
+      "ndcg": 0.5243965882281897,
+      "mrr": 0.6053809523809524,
+      "hit_rate": 0.15428571428571428,
+      "map": 0.018619047619047622
+    },
+    "10": {
+      "precision": 0.4848571428571428,
+      "precision_overlap": 0.09028571428571429,
+      "recall": 0.09028571428571429,
+      "ndcg": 0.5654322215517541,
+      "mrr": 0.623061224489796,
+      "hit_rate": 0.5771428571428572,
+      "map": 0.03387936507936508
+    },
+    "20": {
+      "precision": 0.4848571428571428,
+      "precision_overlap": 0.19071428571428573,
+      "recall": 0.19071428571428573,
+      "ndcg": 0.6157980294093279,
+      "mrr": 0.6266835081351888,
+      "hit_rate": 0.9571428571428572,
+      "map": 0.06749118495515002
+    }
+  },
+  "portfolio_results": {
+    "top_5": {
+      "cumulative_return": -0.36500904302428927,
+      "annualized_return": -0.2789047593783055,
+      "sharpe_ratio": -1.563851164649307,
+      "sortino_ratio": -2.3787578794942212,
+      "max_drawdown": 0.44004073850237196,
+      "win_rate": 0.4542857142857143,
+      "profit_factor": 0.769423722678621,
+      "n_trades": 350
+    },
+    "top_10": {
+      "cumulative_return": -0.31344596482239384,
+      "annualized_return": -0.23720857663997086,
+      "sharpe_ratio": -1.5019010795271186,
+      "sortino_ratio": -2.255160005901779,
+      "max_drawdown": 0.3786535593284324,
+      "win_rate": 0.44571428571428573,
+      "profit_factor": 0.7795797115616477,
+      "n_trades": 350
+    },
+    "top_20": {
+      "cumulative_return": -0.3467852487511822,
+      "annualized_return": -0.2640635589599275,
+      "sharpe_ratio": -2.2909300026183277,
+      "sortino_ratio": -3.3548560390214375,
+      "max_drawdown": 0.3723427995216516,
+      "win_rate": 0.4342857142857143,
+      "profit_factor": 0.6850618744296414,
+      "n_trades": 350
+    },
+    "long_short": {
+      "cumulative_return": -0.532450756241024,
+      "annualized_return": -0.4215368497232195,
+      "sharpe_ratio": -9.167801833350415,
+      "sortino_ratio": -13.313365027407235,
+      "max_drawdown": 0.5387494453124998,
+      "win_rate": 0.2342857142857143,
+      "profit_factor": 0.2296571907177624,
+      "n_trades": 350
+    }
+  },
+  "sector_results": {
+    "Pharma": {
+      "accuracy": 0.4663805436337625,
+      "total_predictions": 699,
+      "correct": 326,
+      "avg_correct_return": "0.012578151",
+      "avg_wrong_return": "-0.010996571"
+    },
+    "Energy": {
+      "accuracy": 0.48964285714285716,
+      "total_predictions": 2800,
+      "correct": 1371,
+      "avg_correct_return": "0.011665593",
+      "avg_wrong_return": "-0.011219233"
+    },
+    "Consumer": {
+      "accuracy": 0.0,
+      "total_predictions": 1,
+      "correct": 0,
+      "avg_correct_return": 0,
+      "avg_wrong_return": "-0.016579514"
+    }
+  },
+  "cross_sector_patterns": [
+    {
+      "sector1": "Pharma",
+      "sector2": "Energy",
+      "cooccurrence": 0.17752380952375316
+    }
+  ],
+  "benchmarks": {
+    "random_return": -0.28840870514120465,
+    "buy_hold_return": 0.0401381254196167,
+    "alpha": -0.35358409024201054
+  }
+}

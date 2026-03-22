@@ -8,11 +8,16 @@ warnings.filterwarnings('ignore')
 
 from _00_setup_environment import CONFIG
 
-def create_temporal_windows(df, window_size=15):
-    """Create temporal windows without data leakage"""
+def create_temporal_windows(df, window_size=15, symbol_id=None):
+    """
+    Create temporal windows without data leakage
+    Now also returns dates and symbol_ids for cross-sectional ranking
+    """
     windows = []
     targets_return = []
     targets_movement = []
+    dates = []
+    symbol_ids = []
     
     feature_cols = [col for col in df.columns if col not in ['return_ratio', 'movement']]
     
@@ -21,14 +26,21 @@ def create_temporal_windows(df, window_size=15):
         window = df.iloc[i:i+window_size][feature_cols].values
         
         # Target is the NEXT day after the window
-        target_return = df.iloc[i+window_size]['return_ratio']
-        target_movement = df.iloc[i+window_size]['movement']
+        target_idx = i + window_size
+        target_return = df.iloc[target_idx]['return_ratio']
+        target_movement = df.iloc[target_idx]['movement']
+        
+        # Get the target date (for cross-sectional grouping)
+        target_date = df.index[target_idx] if isinstance(df.index, pd.DatetimeIndex) else target_idx
         
         windows.append(window.astype(np.float32))
         targets_return.append(float(target_return))
         targets_movement.append(int(target_movement))
+        dates.append(str(target_date)[:10] if hasattr(target_date, '__str__') else str(target_date))
+        symbol_ids.append(symbol_id if symbol_id is not None else 0)
     
-    return np.array(windows), np.array(targets_return), np.array(targets_movement)
+    return (np.array(windows), np.array(targets_return), np.array(targets_movement),
+            dates, symbol_ids)
 
 def build_rolling_correlation_matrix(data_dict, train_data_only=True):
     """
@@ -81,37 +93,49 @@ def build_rolling_correlation_matrix(data_dict, train_data_only=True):
     return corr_matrix, symbols
 
 def windowing_pipeline(normalized_data, dataset_name):
-    """Main windowing pipeline"""
+    """Main windowing pipeline with cross-sectional metadata"""
     print(f"\nWindowing {dataset_name}...")
     
     window_size = CONFIG['data']['window_size']
+    symbols_list = list(normalized_data.keys())
     
     windowed_data = {
-        'symbols': list(normalized_data.keys()),
-        'train': {'windows': [], 'targets_return': [], 'targets_movement': []},
-        'val': {'windows': [], 'targets_return': [], 'targets_movement': []},
-        'test': {'windows': [], 'targets_return': [], 'targets_movement': []},
+        'symbols': symbols_list,
+        'train': {'windows': [], 'targets_return': [], 'targets_movement': [], 'dates': [], 'symbol_ids': []},
+        'val': {'windows': [], 'targets_return': [], 'targets_movement': [], 'dates': [], 'symbol_ids': []},
+        'test': {'windows': [], 'targets_return': [], 'targets_movement': [], 'dates': [], 'symbol_ids': []},
     }
     
-    for symbol, data in normalized_data.items():
+    for symbol_id, (symbol, data) in enumerate(normalized_data.items()):
         for split in ['train', 'val', 'test']:
-            windows, targets_ret, targets_mov = create_temporal_windows(
+            windows, targets_ret, targets_mov, dates, sym_ids = create_temporal_windows(
                 data[split],
-                window_size
+                window_size,
+                symbol_id=symbol_id
             )
             
             windowed_data[split]['windows'].extend(windows)
             windowed_data[split]['targets_return'].extend(targets_ret)
             windowed_data[split]['targets_movement'].extend(targets_mov)
+            windowed_data[split]['dates'].extend(dates)
+            windowed_data[split]['symbol_ids'].extend(sym_ids)
     
     for split in ['train', 'val', 'test']:
         windowed_data[split]['windows'] = np.array(windowed_data[split]['windows'])
         windowed_data[split]['targets_return'] = np.array(windowed_data[split]['targets_return'])
         windowed_data[split]['targets_movement'] = np.array(windowed_data[split]['targets_movement'])
+        windowed_data[split]['symbol_ids'] = np.array(windowed_data[split]['symbol_ids'])
+        # dates remain as list of strings
     
     print(f"✓ Train windows: {windowed_data['train']['windows'].shape}")
     print(f"✓ Val windows: {windowed_data['val']['windows'].shape}")
     print(f"✓ Test windows: {windowed_data['test']['windows'].shape}")
+    
+    # Print cross-sectional info
+    for split in ['train', 'val', 'test']:
+        unique_dates = len(set(windowed_data[split]['dates']))
+        avg_stocks_per_day = len(windowed_data[split]['dates']) / max(unique_dates, 1)
+        print(f"  {split.capitalize()}: {unique_dates} unique dates, ~{avg_stocks_per_day:.1f} stocks/day")
     
     # Build correlation matrix using ONLY training data
     corr_matrix, symbols = build_rolling_correlation_matrix(normalized_data, train_data_only=True)

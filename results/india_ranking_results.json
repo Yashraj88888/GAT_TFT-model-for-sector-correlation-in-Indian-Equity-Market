@@ -1,0 +1,101 @@
+{
+  "dataset": "India",
+  "timestamp": "2026-02-09T02:12:09.788847",
+  "n_test_samples": 33614,
+  "n_trading_days": 351,
+  "ranking_metrics": {
+    "precision@5": 0.4843304843304843,
+    "precision@5_std": 0.30449536817765516,
+    "precision@10": 0.4848571428571428,
+    "precision@10_std": 0.2726051192116688,
+    "precision@20": 0.48757142857142866,
+    "precision@20_std": 0.25418461071931675,
+    "precision_overlap@5": 0.06039886039886041,
+    "precision_overlap@5_std": 0.11595686593098345,
+    "precision_overlap@10": 0.11257142857142859,
+    "precision_overlap@10_std": 0.10176563711763999,
+    "precision_overlap@20": 0.21485714285714286,
+    "precision_overlap@20_std": 0.09513513482174196,
+    "mrr@5": 0.6286324786324786,
+    "mrr@5_std": 0.37868697877139557,
+    "mrr@10": 0.6380702947845805,
+    "mrr@10_std": 0.36269820344220016,
+    "mrr@20": 0.6403310153898389,
+    "mrr@20_std": 0.35892534306692697,
+    "ndcg@5": 0.5229524134375727,
+    "ndcg@5_std": 0.14416423950389307,
+    "ndcg@10": 0.5609782648345668,
+    "ndcg@10_std": 0.12802388019130767,
+    "ndcg@20": 0.6151615919658172,
+    "ndcg@20_std": 0.11191483547538086,
+    "hit_rate@5": 0.25925925925925924,
+    "hit_rate@5_std": 0.43822813208145306,
+    "hit_rate@10": 0.6942857142857143,
+    "hit_rate@10_std": 0.46070930229862933,
+    "hit_rate@20": 0.9885714285714285,
+    "hit_rate@20_std": 0.10629185850136157
+  },
+  "prediction_metrics": {
+    "accuracy": 0.5049979175343606,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "auc_roc": 0.5122524091022024,
+    "auc_pr": 0.5055916348883359,
+    "return_mae": 0.015127970402269639,
+    "return_rmse": 0.019936400467863002,
+    "directional_accuracy": 0.5043434283334325,
+    "return_correlation": -0.007384320513285492
+  },
+  "portfolio_results": {
+    "top_5_equal": {
+      "cumulative_return": -0.34946889852105734,
+      "annualized_return": -0.2655942872354501,
+      "sharpe_ratio": -1.46734580682724,
+      "sortino_ratio": -2.12897047011547,
+      "calmar_ratio": -0.6636107717475571,
+      "max_drawdown": 0.4002260037703009,
+      "win_rate": 0.4586894586894587,
+      "profit_factor": 0.7777640365573458,
+      "n_trades": 351
+    },
+    "top_10_equal": {
+      "cumulative_return": -0.3673826610062305,
+      "annualized_return": -0.2808465213401503,
+      "sharpe_ratio": -1.6788089187077453,
+      "sortino_ratio": -2.365602525862294,
+      "calmar_ratio": -0.6995945854709142,
+      "max_drawdown": 0.40144181669317186,
+      "win_rate": 0.47714285714285715,
+      "profit_factor": 0.7483832028341878,
+      "n_trades": 350
+    },
+    "top_20_equal": {
+      "cumulative_return": -0.3227759587897622,
+      "annualized_return": -0.24468640056725732,
+      "sharpe_ratio": -1.6051396277416636,
+      "sortino_ratio": -2.2233266339619013,
+      "calmar_ratio": -0.7030033255982474,
+      "max_drawdown": 0.3480586672318116,
+      "win_rate": 0.4714285714285714,
+      "profit_factor": 0.7621442190172559,
+      "n_trades": 350
+    },
+    "long_short_10": {
+      "cumulative_return": -0.5409872229192294,
+      "annualized_return": -0.4291607356255718,
+      "sharpe_ratio": -7.454480364795069,
+      "sortino_ratio": -10.470514632851053,
+      "calmar_ratio": -0.7844109519973684,
+      "max_drawdown": 0.5471121158275357,
+      "win_rate": 0.2857142857142857,
+      "profit_factor": 0.2817323434173284,
+      "n_trades": 350
+    }
+  },
+  "benchmarks": {
+    "random_return": -0.2884087045054762,
+    "buy_hold_return": 0.04561431187104015,
+    "alpha": -0.41299697287727066
+  }
+}
