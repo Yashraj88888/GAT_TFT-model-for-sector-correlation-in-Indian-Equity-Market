@@ -444,11 +444,6 @@ For questions, bug reports, or feature requests:
 2. Create a new issue with detailed description
 3. Include error messages and environment details
 
----
-
-## 📄 License
-
-[Specify your license here - e.g., MIT, Apache 2.0, etc.]
 
 ---
 
